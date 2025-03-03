@@ -1,8 +1,7 @@
 import motor.motor_asyncio
 from config import Config
-import logging  # Added for logging errors and important information
+import logging
 from .utils import send_log
-
 
 class Database:
     def __init__(self, uri, database_name):
@@ -157,6 +156,5 @@ class Database:
         except Exception as e:
             logging.error(f"Error getting metadata code for user {id}: {e}")
             return None
-
 
 AshutoshGoswami24 = Database(Config.DB_URL, Config.DB_NAME)
