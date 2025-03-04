@@ -19,7 +19,9 @@ class Config(object):
     FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'AshutoshGoswami24,BotzPW').split(',')
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
     PORT = int(os.environ.get("PORT", ""))
-    
+        
+# add STRING_SESSION
+    STRING_SESSION = os.environ.get("STRING_SESSION", "")
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
 
