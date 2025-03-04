@@ -16,8 +16,8 @@ class Config(object):
     START_PIC   = os.environ.get("START_PIC", "http://postimg.cc/xkMDVQ35")
     ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
     # -- FORCE_SUB_CHANNELS = ["BotzPW","jinwooSupport","jinwoo_edition"] -- # 
-    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'AshutoshGoswami24,BotzPW').split(',')
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'Jinwoo_edition,BotzPW').split(',')
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002413704610"))
     PORT = int(os.environ.get("PORT", "8080"))
         
 # add STRING_SESSION
