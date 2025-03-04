@@ -55,4 +55,35 @@ class Bot(Client):
             try:
                 curr = datetime.now(timezone("Asia/Kolkata"))
                 date = curr.strftime("%d %B, %Y")
-                time
+                time_str = curr.strftime("%I:%M:%S %p")
+                await self.send_message(
+                    Config.LOG_CHANNEL,
+                    f"**__{me.mention} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ !!**\n\n📅 Dᴀᴛᴇ : `{date}`\n⏰ Tɪᴍᴇ : `{time_str}`\n🌐 Tɪᴍᴇᴢᴏɴᴇ : `Asia/Kolkata`\n🤖 Vᴇʀsɪᴏɴ : `{__version__}`\n🔝 Lᴀʏᴇʀ : `{layer}`",
+                )
+            except Exception as e:
+                print(f"Pʟᴇᴀꜱᴇ Mᴀᴋᴇ Tʜɪs Bᴏᴛ Aᴅᴍɪɴ Iɴ Yᴏᴜʀ Lᴏɢ Cʜᴀɴɴᴇʟ: {e}")
+
+    async def stop(self, *args):
+        await super().stop()
+        logging.info("Bot Stopped 🙄")
+
+bot_instance = Bot()
+
+def main():
+    async def start_services():
+        retry = True
+        while retry:
+            try:
+                await asyncio.gather(bot_instance.start())
+                retry = False
+            except FloodWait as e:
+                logging.warning(f"FloodWait: Waiting for {e.value} seconds")
+                time.sleep(e.value)
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(start_services())
+    loop.run_forever()
+
+if __name__ == "__main__":
+    warnings.filterwarnings("ignore", message="There is no current event loop")
+    main()
