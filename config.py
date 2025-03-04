@@ -21,7 +21,7 @@ class Config(object):
     PORT = int(os.environ.get("PORT", ""))
         
 # add STRING_SESSION
-    STRING_SESSION = int(os.environ.get("STRING_SESSION", ""))
+    STRING_SESSION = os.environ.get("STRING_SESSION", "")
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
 
