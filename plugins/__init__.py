@@ -1,1 +1,1 @@
-touch plugins/__init__.py
+ plugins/__init__.py
