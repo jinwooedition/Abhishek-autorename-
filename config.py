@@ -17,7 +17,7 @@ class Config(object):
     ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
     # -- FORCE_SUB_CHANNELS = ["BotzPW","jinwooSupport","jinwoo_edition"] -- # 
     FORCE_SUB_CHANNELS = os.environ.get('FORCE_SUB_CHANNELS', 'Jinwoo_edition,BotzPW').split(',')
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002413704610"))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "LOG_CHANNEL"))
     PORT = int(os.environ.get("PORT", "8080"))
         
 # add STRING_SESSION
